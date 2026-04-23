@@ -1,21 +1,53 @@
-Sample files: 
+Sample files:
 
 * geospatial
-  * ChicagoGrocery.py: find the distance to the nearest grocery store from the center of each county.
-  * CobaltLikelihood.py: determine likelihood of finding Cobalt given proximity to geophysical process.
-  * ML_LogisticClassifier.py: determine if a rock sample is best classified as sedimentary or metamorphic.
-  * ML_TornadoRegression.py: determine how useful physical tornado characteristics are at determining damage, injuries, or death toll.
+  * ChicagoGrocery.py  
+    **Question: How far is each county’s population center from the nearest grocery store, and where do potential food access gaps exist?**  
+    Description: Computes geodesic distance from county centroids to nearest grocery locations to quantify spatial accessibility.
+
+  * CobaltLikelihood.py  
+    **Question: How does proximity to key geophysical features influence the likelihood of cobalt mineralization?**  
+    Description: Estimates spatial likelihood of cobalt presence using distance-based decay from relevant geological structures or contacts.
+
+  * MLGeologyClassification.py  
+    **Question: Can geochemical or spatial features reliably distinguish between sedimentary and metamorphic rock samples?**  
+    Description: Trains a logistic regression classifier to predict rock type and evaluate feature separability.
+
+  * TornadoDamageRegression.py  
+    **Question: How well do measurable tornado characteristics predict downstream impacts like damage, injuries, or fatalities?**  
+    Description: Uses regression modeling to quantify relationships between tornado features and observed outcome severity.
 
 * orbital
-  * 3I-ATLAS.py: plot and propagate 3I-ATLAS trajectory using heliocentric two body propagation.
-  * KeplerianOrbit.py: example of easy to use two body orbital propagation class.
-  * FlybyEarthInterceptKO2B.py: compute optimal intercept trajectory of 3I-ATALS to Earth. 
+  * 3I-ATLAS.py  
+    **Question: Given current state estimates, what trajectory does 3I-ATLAS follow under heliocentric two-body dynamics?**  
+    Description: Propagates and visualizes the object’s orbit using classical Keplerian motion assumptions.
+
+  * KeplerianOrbit.py  
+    **Question: How can we efficiently and cleanly propagate orbital states under two-body dynamics?**  
+    Description: Implements a reusable class for Keplerian orbit propagation and state vector evolution.
+
+  * FlybyEarthInterceptKO2B.py  
+    **Question: What is the minimum-effort trajectory required for an object to intercept Earth under two-body dynamics?**  
+    Description: Computes an optimal intercept trajectory using simplified heliocentric dynamics and control assumptions.
 
 * sim
-  * Traffic.py: 1D bang-bang traffic simulator.
-  * CompetitiveSpecies.py: numerically solve coupled non-linear differntial equations of type Lotka-Volterra.
+  * Traffic.py  
+    **Question: How do simple acceleration and braking rules (bang-bang control) produce emergent traffic flow behavior?**  
+    Description: Simulates 1D traffic dynamics to explore congestion formation and stability under discrete control laws.
+
+  * CompetitiveSpecies.py  
+    **Question: How do interacting species populations evolve over time under nonlinear competition dynamics?**  
+    Description: Numerically solves coupled Lotka–Volterra equations to analyze stability, oscillations, and equilibrium behavior.
 
 * datascience
-  * MahalonboisDistance.py: determine outliers in dataset.
-  * PELinearModel.py: parameter estimation using MCMC for linear regression coefficients.
-  * RegimeSwitchDetect.py: a method to detect point of regime switch in time-series data.
+  * MahalanobisOutlierDetection.py  
+    **Question: Which observations in a dataset are statistically inconsistent with the underlying distribution?**  
+    Description: Detects multivariate outliers using Mahalanobis distance and covariance structure.
+
+  * PELinearModel.py  
+    **Question: What are the most probable parameter values for a linear model given noisy observations and uncertainty?**  
+    Description: Uses MCMC to estimate posterior distributions of regression coefficients.
+
+  * RegimeSwitchDetect.py  
+    **Question: Where do statistically significant changes in distribution occur within a time series?**  
+    Description: Detects regime shifts by comparing distributions before and after candidate change points.
