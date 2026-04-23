@@ -9,56 +9,40 @@ import bilby
 import matplotlib.pyplot as plt
 import numpy as np
 from bilby.core.utils.random import rng, seed
-
-# Sets seed of bilby's generator "rng" to "123" to ensure reproducibility
 seed(123)
 
-# A few simple setup steps
+# setup
 label = "linear_regression"
 outdir = "outdir"
 bilby.utils.check_directory_exists_and_if_not_mkdir(outdir)
 
 
-# First, we define our "signal model", in this case a simple linear function
+#signal model
 def model(time, m, c):
     return time * m + c
 
 
-# Now we define the injection parameters which we make simulated data with
+# inject signal
 injection_parameters = dict(m=0.5, c=0.2)
 
-# For this example, we'll use standard Gaussian noise
-
-# These lines of code generate the fake data. Note the ** just unpacks the
-# contents of the injection_parameters when calling the model function.
+#time domain setup 
 sampling_frequency = 10
 time_duration = 10
 time = np.arange(0, time_duration, 1 / sampling_frequency)
 N = len(time)
 sigma = 0.1
-data = model(time, **injection_parameters) + rng.normal(0, sigma, N)
+data = model(time, **injection_parameters) + rng.normal(0, sigma, N) #gaussian random normal noise
 
-# We quickly plot the data to check it looks sensible
-fig, ax = plt.subplots()
-ax.plot(time, data, "o", label="data")
-ax.plot(time, model(time, **injection_parameters), "--r", label="signal")
-ax.set_xlabel("time")
-ax.set_ylabel("y")
-ax.legend()
-fig.savefig("{}/{}_data.png".format(outdir, label))
 
-# Now lets instantiate a version of our GaussianLikelihood, giving it
-# the time, data and signal model
-# note you can omit sigma here and it will be margianlized over (unknown variance of noise)
+# gaussian likelihood
 likelihood = bilby.likelihood.GaussianLikelihood(time, data, model, sigma)
 
-# From hereon, the syntax is exactly equivalent to other bilby examples
-# We make a prior
+# priors
 priors = dict()
 priors["m"] = bilby.core.prior.Uniform(0, 5, "m")
 priors["c"] = bilby.core.prior.Uniform(-2, 2, "c")
 
-# And run sampler
+# run sampler
 result = bilby.run_sampler(
     likelihood=likelihood,
     priors=priors,
@@ -69,5 +53,5 @@ result = bilby.run_sampler(
     label=label,
 )
 
-# Finally plot a corner plot: all outputs are stored in outdir
+# corner plot
 result.plot_corner()
