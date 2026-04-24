@@ -1,5 +1,19 @@
 Sample files:
 
+* datascience
+
+    * RealTimeSurgeDetection.py  
+    **Question: When do we expect the peak surge time to occur under uncertainty?**  
+    Description: Implements an Extended Kalman Filter to track and estimate the timing and amplitude of transient surge events in noisy signals in real time.
+
+  * MahalanobisOutlierDetection.py  
+    **Question: Which observations in a dataset are statistically inconsistent with the underlying distribution?**  
+    Description: Detects multivariate outliers using Mahalanobis distance and covariance structure.
+
+  * RegimeSwitchDetect.py  
+    **Question: Where do statistically significant changes in distribution occur within a time series?**  
+    Description: Detects regime shifts by comparing distributions before and after candidate change points.
+
 * geospatial
   * ChicagoGrocery.py  
     **Question: How far is each county’s population center from the nearest grocery store, and where do potential food access gaps exist?**  
@@ -39,21 +53,6 @@ Sample files:
     **Question: How do interacting species populations evolve over time under nonlinear competition dynamics?**  
     Description: Numerically solves coupled Lotka–Volterra equations to analyze stability, oscillations, and equilibrium behavior.
 
-* datascience
-  * MahalanobisOutlierDetection.py  
-    **Question: Which observations in a dataset are statistically inconsistent with the underlying distribution?**  
-    Description: Detects multivariate outliers using Mahalanobis distance and covariance structure.
 
-  * PELinearModel.py  
-    **Question: What are the most probable parameter values for a linear model given noisy observations and uncertainty?**  
-    Description: Uses MCMC to estimate posterior distributions of regression coefficients.
-
-  * RegimeSwitchDetect.py  
-    **Question: Where do statistically significant changes in distribution occur within a time series?**  
-    Description: Detects regime shifts by comparing distributions before and after candidate change points.
-
-  * RealTimeSurgeDetection.py  
-    **Question: When do we expect the peak surge time to occur under uncertainty?**  
-    Description: Implements an Extended Kalman Filter to track and estimate the timing and amplitude of transient surge events in noisy signals in real time.
 
     
