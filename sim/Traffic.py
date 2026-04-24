@@ -5,7 +5,7 @@ import matplotlib.cm as cm
 import random
 
 #global
-dt = 0.01
+dt = 0.005
 Npart = 30
 duration = 60
 max_road_length = 50
@@ -40,7 +40,7 @@ def advance_state( previous_time_states_of_all_particles , dt, jth_particle):
     utang_vec = unit_tangent_vector_at_x(x)
 
     #if last particle just propagate forward
-    if j is Npart - 1: 
+    if jth_particle == Npart - 1: 
         vnew = vmag*(utang_vec)
         new_state = [state[0] + dt*vnew[0], state[1] + dt*vnew[1], vnew[0], vnew[1]]
         return new_state
