@@ -37,10 +37,10 @@ Sample files:
     Description: Propagates and visualizes the object’s orbit using classical Keplerian motion assumptions.
 
   * KeplerianOrbit.py  
-    **Question: How can we efficiently and cleanly propagate orbital states under two-body dynamics?**  
+    **Question: How can we efficiently propagate orbital states under two-body dynamics?**  
     Description: Implements a reusable class for Keplerian orbit propagation and state vector evolution.
 
-  * FlybyEarthInterceptKO2B.py  
+  * OrbitalIntercept.py  
     **Question: What is the minimum-effort trajectory required for an object to intercept Earth under two-body dynamics?**  
     Description: Computes an optimal intercept trajectory using simplified heliocentric dynamics and control assumptions.
 
