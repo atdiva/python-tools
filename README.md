@@ -51,3 +51,9 @@ Sample files:
   * RegimeSwitchDetect.py  
     **Question: Where do statistically significant changes in distribution occur within a time series?**  
     Description: Detects regime shifts by comparing distributions before and after candidate change points.
+
+  * RealTimeSurgeDetection.py  
+    **Question: When do we expect the peak surge time to occur under uncertainty?**  
+    Description: Implements an Extended Kalman Filter to track and estimate the timing and amplitude of transient surge events in noisy signals in real time.
+
+    
