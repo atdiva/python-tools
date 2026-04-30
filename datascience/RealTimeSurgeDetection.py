@@ -11,7 +11,6 @@ def surge_model(t, tpeak, A):
     ind_between = (t >= tpeak) & (t <= 2*tpeak)
     x_t[ind_between] = ( t[ind_between]  - 2*tpeak)**2 
     x_t = A*x_t/(tpeak**2)
-    print(np.max(x_t))
     return x_t
     
 #states are time-invariant 
@@ -42,7 +41,7 @@ def H(t, x, measdim):
 
 #input params 
 tpeak_true = 200
-A_true = 1.5
+A_true = 1
 statedim = 2
 mdim = 1
 
@@ -57,8 +56,8 @@ covar = np.zeros([N, statedim, statedim])
 state_signal = np.zeros(N)
 
 #init state [tpeak, Amplitude] and covar
-state[0,0] = tpeak_true*np.random.uniform(0.85, 1.25)
-state[0,1] = A_true*np.random.uniform(0.85, 1.25)
+state[0,0] = tpeak_true*0.5
+state[0,1] = 2
 covar[0, 0, 0] = (50)**2
 covar[0, 1, 1] = (1)**2
 
@@ -102,7 +101,7 @@ sigma_tpeak = np.sqrt(covar[:, 0, 0])
 sigma_Apeak = np.sqrt(covar[:, 1, 1])
 
 plt.figure()
-plt.plot(time, data, 'k', alpha=0.8)
+plt.plot(time, data, 'k', alpha=0.5)
 plt.plot(time, signal, 'r', alpha=0.8)
 plt.plot(time, state_signal, 'b')
 
