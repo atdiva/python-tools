@@ -31,6 +31,10 @@ Sample files:
     **Question: How well do measurable tornado characteristics predict downstream impacts like damage, injuries, or fatalities?**  
     Description: Uses regression modeling to quantify relationships between tornado features and observed outcome severity.
 
+  * SeismoAnalysis.py
+    **Question: Are the observed broadband seismic arrivals consistent with ordinary P/S/surface-wave propagation?**
+    Description: Built a Python pipeline to ingest seismic waveform data, rotate components into R/T/Z, and visualize event structure with time-frequency analysis.
+
 * orbital
   * 3I-ATLAS.py  
     **Question: Given current state estimates, what trajectory does 3I-ATLAS follow under heliocentric two-body dynamics?**  
